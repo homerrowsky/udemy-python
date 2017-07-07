@@ -13,14 +13,23 @@ def realizaCalculo():
     global run
     global previa
 
-    ecuacion = input('Teclea la operacion: ')
+    # Nueva operacion o Mantiene resultado anterior para seguir realizando operaciones
+    if previa == 0:
+        ecuacion = input('Teclea la operacion: ')
+    else:
+        ecuacion = input(str(previa))
+
+
     if ecuacion == "salir":
         print('\n\nCerrando...... Hasta pronto!!')
         run = False
     else:
-        ecuacion = re.sub('[a-zA-Z,:.\'()" "]', '', ecuacion)
-        previa = eval(ecuacion)
-        print('Tecleaste la operacion: ', previa)
+        ecuacion = re.sub('[a-zA-Z,:\'()" "]', '', ecuacion)
+        if previa == 0:
+           previa = eval(ecuacion)
+        else:
+            previa = eval(str(previa) + ecuacion)
+        print(previa)
 
 # Empieza ejecución
 while run:
