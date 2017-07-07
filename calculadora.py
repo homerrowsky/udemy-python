@@ -20,6 +20,10 @@ def realizaCalculo():
         ecuacion = input(str(previa))
 
 
+    # Salir si usuario teclea "salir"
+    # Mediante regex se filtra lo tecleado para evitar ejecucion arbitraria
+    # de código. Se evalúa expresión y se almacena en var 'previa' ( en caso
+    # de que ya exista, se reusa para añadirle la expresión tecleada)
     if ecuacion == "salir":
         print('\n\nCerrando...... Hasta pronto!!')
         run = False
