@@ -33,6 +33,7 @@ def realizaCalculo():
            previa = eval(ecuacion)
         else:
             previa = eval(str(previa) + ecuacion)
+            previa = round(previa, 2)
         print(previa)
 
 # Empieza ejecución
